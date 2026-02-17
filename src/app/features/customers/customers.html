@@ -11,8 +11,15 @@
     </div>
   </div>
   <div class="customers-layout">
+    <div class="filter">
+      <input
+        type="text"
+        placeholder="Search..."
+        (input)="store.setFilter($any($event.target).value)"
+      />
+    </div>
     <div class="customers-list">
-      @for (customer of store.customers(); track customer.id) {
+      @for (customer of store.filteredCustomers(); track customer.id) {
         <div
           class="customer-item"
           [class.selected]="store.selectedCustomerId() === customer.id"
