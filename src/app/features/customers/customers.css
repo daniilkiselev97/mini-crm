@@ -1,0 +1,87 @@
+.customers-page {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.stats {
+	display: flex;
+	gap: 20px;
+}
+
+.stat-card {
+	background: white;
+	padding: 16px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	min-width: 150px;
+
+	.label {
+		font-size: 14px;
+		color: #64748b;
+	}
+
+	.value {
+		font-size: 20px;
+		font-weight: 600;
+	}
+}
+
+.customers-layout {
+	display: flex;
+	gap: 20px;
+}
+
+.customers-list {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.customer-item {
+	background: white;
+	padding: 12px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	border: 1px solid transparent;
+
+	&:hover {
+		border-color: #3b82f6;
+	}
+
+	&.selected {
+		border-color: #2563eb;
+		background: #eff6ff;
+	}
+
+	.name {
+		font-weight: 500;
+	}
+
+	.company {
+		font-size: 13px;
+		color: #64748b;
+	}
+}
+
+.customer-details {
+	flex: 1;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+	h3 {
+		margin-bottom: 16px;
+	}
+
+	.detail {
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: space-between;
+	}
+}

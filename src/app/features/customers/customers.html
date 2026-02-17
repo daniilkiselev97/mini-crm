@@ -1,1 +1,44 @@
-<p>customers works!</p>
+<div class="customers-page">
+  <h1>Customers</h1>
+  <div class="stats">
+    <div class="stat-card">
+      <span class="label">Active</span>
+      <span class="value">{{ store.activeCustomersCount() }}</span>
+    </div>
+    <div class="stat-card">
+      <span class="label">Total revenue</span>
+      <span class="value">{{ store.totalRevenue() }}</span>
+    </div>
+  </div>
+  <div class="customers-layout">
+    <div class="customers-list">
+      @for (customer of store.customers(); track customer.id) {
+        <div
+          class="customer-item"
+          [class.selected]="store.selectedCustomerId() === customer.id"
+          (click)="store.selectCustomer(customer.id)"
+        >
+          <div class="name">{{ customer.name }}</div>
+          <div class="company">{{ customer.company }}</div>
+        </div>
+      }
+    </div>
+    @if (store.selectedCustomer()) {
+      <div class="customer-details">
+        <h3>Customer details</h3>
+        <div class="detail">
+          <span>Email:</span>
+          <strong>{{ store.selectedCustomer()?.email }}</strong>
+        </div>
+        <div class="detail">
+          <span>Status:</span>
+          <strong>{{ store.selectedCustomer()?.status }}</strong>
+        </div>
+        <div class="detail">
+          <span>Revenue:</span>
+          <strong>{{ store.selectedCustomer()?.revenue }}</strong>
+        </div>
+      </div>
+    }
+  </div>
+</div>
