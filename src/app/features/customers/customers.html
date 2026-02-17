@@ -23,29 +23,12 @@
         <div
           class="customer-item"
           [class.selected]="store.selectedCustomerId() === customer.id"
-          (click)="store.selectCustomer(customer.id)"
+		  [routerLink]="['/customers', customer.id]"
         >
           <div class="name">{{ customer.name }}</div>
           <div class="company">{{ customer.company }}</div>
         </div>
       }
     </div>
-    @if (store.selectedCustomer()) {
-      <div class="customer-details">
-        <h3>Customer details</h3>
-        <div class="detail">
-          <span>Email:</span>
-          <strong>{{ store.selectedCustomer()?.email }}</strong>
-        </div>
-        <div class="detail">
-          <span>Status:</span>
-          <strong>{{ store.selectedCustomer()?.status }}</strong>
-        </div>
-        <div class="detail">
-          <span>Revenue:</span>
-          <strong>{{ store.selectedCustomer()?.revenue }}</strong>
-        </div>
-      </div>
-    }
   </div>
 </div>

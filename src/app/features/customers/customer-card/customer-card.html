@@ -1,0 +1,9 @@
+@if (customer()) {
+	<div class="details">
+		<h2>{{customer()?.name}}</h2>
+		<p>Email: {{customer()?.email}}</p>
+		<p>Company: {{customer()?.company}}</p>
+		<p>Status: {{customer()?.status}}</p>
+		<p>Revenue: {{customer()?.revenue}}</p>
+	</div>
+}
