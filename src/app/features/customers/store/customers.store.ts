@@ -26,17 +26,12 @@ export class CustomersStore {
 
   private _filter = signal<string>('')
 
-  private _selectedCustomerId = signal<string | null>(null)
 
   customers = this._customers.asReadonly()
 
   filter = this._filter.asReadonly()
 
-  selectedCustomerId = this._selectedCustomerId.asReadonly()
 
-  selectedCustomer = computed(() => {
-    return this._customers().find(c => c.id === this._selectedCustomerId())
-  })
 
   activeCustomersCount = computed(() => {
     return this._customers().filter(c => c.status === 'active').length
@@ -55,12 +50,13 @@ export class CustomersStore {
     this._filter.set(value)
   }
 
-  selectCustomer(id: string) {
-    this._selectedCustomerId.set(id)
-  }
 
   addCustomer(customer: Customer) {
     this._customers.update(list => [...list, customer])
+  }
+
+  updateCustomer(updatedCustomer: Customer) {
+    this._customers.update(list => list.map(c => c.id === updatedCustomer.id ? updatedCustomer : c))
   }
 
 }

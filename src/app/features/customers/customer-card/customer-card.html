@@ -1,9 +1,24 @@
-@if (customer()) {
-	<div class="details">
-		<h2>{{customer()?.name}}</h2>
-		<p>Email: {{customer()?.email}}</p>
-		<p>Company: {{customer()?.company}}</p>
-		<p>Status: {{customer()?.status}}</p>
-		<p>Revenue: {{customer()?.revenue}}</p>
-	</div>
+@if (editableCustomer()) {
+  <form class="card" (submit)="save($event)">
+    <h2>Edit Customer</h2>
+    <div class="field">
+      <label>Name</label>
+      <input [value]="editableCustomer()?.name" (input)="updateName($event)" placeholder="Name" />
+      @if (!nameValid()) {
+        <small class="error">Invalid name</small>
+      }
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input
+        [value]="editableCustomer()?.email"
+        (input)="updateEmail($event)"
+        placeholder="Email"
+      />
+      @if (!emailValid()) {
+        <small class="error">Invalid email</small>
+      }
+    </div>
+    <button type="submit" [disabled]="!canSave()">Save</button>
+  </form>
 }

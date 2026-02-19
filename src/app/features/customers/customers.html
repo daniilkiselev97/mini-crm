@@ -22,7 +22,6 @@
       @for (customer of store.filteredCustomers(); track customer.id) {
         <div
           class="customer-item"
-          [class.selected]="store.selectedCustomerId() === customer.id"
 		  [routerLink]="['/customers', customer.id]"
         >
           <div class="name">{{ customer.name }}</div>
