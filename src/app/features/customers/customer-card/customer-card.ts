@@ -1,11 +1,10 @@
 import { Component, computed, effect, inject, input, linkedSignal } from '@angular/core';
 import { CustomersStore } from '../store/customers.store';
-import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-card',
-  imports: [ReactiveFormsModule],
+  imports: [],
   templateUrl: './customer-card.html',
   styleUrl: './customer-card.css',
 })

@@ -7,10 +7,6 @@ export const routes: Routes = [
 		component: Layout,
 		children: [
 			{
-				path: 'dashboard',
-				loadComponent: () => import('./features/dashboard/dashboard').then(m => m.Dashboard)
-			},
-			{
 				path: 'customers',
 				loadComponent: () => import('./features/customers/customers').then(m => m.Customers)
 			},
@@ -19,8 +15,13 @@ export const routes: Routes = [
 				loadComponent: () => import('./features/customers/customer-details/customer-details').then(m => m.CustomerDetails)
 			},
 			{
+				path: 'overview',
+				loadComponent: () => import('./features/overview/overview').then(m => m.Overview)
+
+			},
+			{
 				path: '',
-				redirectTo: 'dashboard',
+				redirectTo: 'customers',
 				pathMatch: 'full'
 			}
 		]

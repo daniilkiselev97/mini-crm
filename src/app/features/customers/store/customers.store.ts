@@ -21,7 +21,32 @@ export class CustomersStore {
       company: 'Beta LLC',
       status: 'inactive',
       revenue: 5000
-    }
+    },
+    {
+      id: '3',
+      name: 'Sarah Johnson',
+      email: 'sarah.j@email.com',
+      company: 'Alpha',
+      status: 'active',
+      revenue: 6000
+    },
+    {
+      id: '4',
+      name: 'Michael Williams',
+      email: 'mwilliams@email.com',
+      company: 'Betta',
+      status: 'active',
+      revenue: 8500
+    },
+    {
+      id: '5',
+      name: 'Emma Brown',
+      email: 'emma.b@email.com',
+      company: 'Liga',
+      status: 'active',
+      revenue: 3000
+    },
+
   ])
 
   private _filter = signal<string>('')

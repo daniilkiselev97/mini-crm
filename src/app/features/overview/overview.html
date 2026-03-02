@@ -1,0 +1,15 @@
+<div class="overview-page">
+  <h1>Dashboard</h1>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h2>Revenue per Customer</h2>
+      <canvas baseChart [data]="barChartData()" [type]="barChartType"> </canvas>
+    </div>
+
+    <div class="chart-card">
+      <h2>Customer Status</h2>
+      <canvas baseChart [data]="pieChartData()" [type]="pieChartType"> </canvas>
+    </div>
+  </div>
+</div>

@@ -10,14 +10,14 @@
       <span class="value">{{ store.totalRevenue() }}</span>
     </div>
   </div>
-  <div class="customers-layout">
-    <div class="filter">
+  <div class="filter">
       <input
         type="text"
         placeholder="Search..."
         (input)="store.setFilter($any($event.target).value)"
       />
     </div>
+  <div class="customers-layout">
     <div class="customers-list">
       @for (customer of store.filteredCustomers(); track customer.id) {
         <div
