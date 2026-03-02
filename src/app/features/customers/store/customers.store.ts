@@ -84,4 +84,8 @@ export class CustomersStore {
     this._customers.update(list => list.map(c => c.id === updatedCustomer.id ? updatedCustomer : c))
   }
 
+  clear() {
+    this._customers.set([])
+  }
+
 }
